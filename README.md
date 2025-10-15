@@ -2,10 +2,7 @@
 
 A clean, elegant, and feature-rich stopwatch Progressive Web App (PWA) built with vanilla HTML, CSS, and JavaScript. It's designed to be mobile-first, fully responsive, installable on any device, and works completely offline.
 
-**Live Demo:** [your-netlify-app-url.netlify.app](https://your-netlify-app-url.netlify.app)
-
-![Screenshot of the stopwatch application](https://i.imgur.com/your-screenshot-url.png)
-*(**Pro-tip:** Take a screenshot of your finished app and upload it to a site like Imgur, then replace the URL above to have a nice preview in your README!)*
+**Live Demo:** [your-netlify-app-url.netlify.app](https://stopwatchpwa.netlify.app/)
 
 ---
 
