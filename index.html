@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Stopwatch</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <div class="stopwatch-container">
+        <div id="display" class="display">00:00:00:00</div>
+        
+        <div id="lapAnalysis" class="lap-analysis">
+            <div>Fastest: <span id="fastestLap">-</span></div>
+            <div>Slowest: <span id="slowestLap">-</span></div>
+            <div>Average: <span id="averageLap">-</span></div>
+        </div>
+
+        <div class="controls">
+            <button id="secondaryButton">Reset</button>
+            <button id="mainButton">Start</button>
+        </div>
+        
+        <ul id="laps" class="laps"></ul>
+
+        <div class="export-container">
+            <button id="exportButton" disabled>Export Laps</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

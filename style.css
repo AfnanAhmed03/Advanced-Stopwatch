@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* --- Blinking Animation for Colons --- */
+@keyframes blink {
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+body {
+    background-color: #1d1f21;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.stopwatch-container {
+    background-color: #282a2d;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 15px S30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 420px;
+}
+
+.display {
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.display .colon {
+    animation: blink 1s steps(1, end) infinite;
+    animation-play-state: paused; /* Paused by default */
+}
+
+.lap-analysis {
+    display: flex;
+    justify-content: space-around;
+    color: #7f8c8d;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+.lap-analysis span {
+    color: #b0b0b0;
+    font-weight: 400;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.controls button {
+    width: 120px; /* Fixed width for consistency */
+    background-color: #3b3e42;
+    color: #c5a365;
+    border: none;
+    padding: 12px 0;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.controls button:hover:not(:disabled) {
+    background-color: #c5a365;
+    color: #1d1f21;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Specific styling for the main "Start" button */
+#mainButton.start { color: #85d996; }
+#mainButton.pause { color: #f0a36b; }
+#mainButton.resume { color: #85d996; }
+#mainButton.start:hover:not(:disabled) { background-color: #85d996; color: #1d1f21; }
+#mainButton.pause:hover:not(:disabled) { background-color: #f0a36b; color: #1d1f21; }
+#mainButton.resume:hover:not(:disabled) { background-color: #85d996; color: #1d1f21; }
+
+
+.laps {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-height: 150px;
+    overflow-y: auto;
+    text-align: left;
+}
+.laps li {
+    color: #b0b0b0;
+    padding: 12px 20px;
+    border-bottom: 1px solid #3b3e42;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 300;
+}
+.laps li:last-child { border-bottom: none; }
+.laps li span { color: #7f8c8d; margin-right: 20px; }
+
+.export-container {
+    margin-top: 25px;
+    border-top: 1px solid #3b3e42;
+    padding-top: 20px;
+}
+#exportButton {
+    background: none;
+    border: 1px solid #555;
+    color: #888;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#exportButton:hover:not(:disabled) { background-color: #c5a365; color: #1d1f21; border-color: #c5a365; }
+#exportButton:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* --- Media Query for Mobile Responsiveness --- */
+@media (max-width: 480px) {
+    .stopwatch-container {
+        width: 100%;
+        max-width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    .display {
+        font-size: 3.5rem; /* Make the timer text smaller */
+    }
+
+    .controls button {
+        width: 100px; /* Adjust button width */
+    }
+
+    .laps {
+        max-height: 200px; /* Allow more space for laps */
+    }
+}
